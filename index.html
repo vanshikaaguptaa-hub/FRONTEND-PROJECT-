@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carewell Hospital Management</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <h1 class="brand">Carewell<span>Hospital</span></h1>
+  <nav>
+    <a href="#dashboard" class="nav-dashboard">Dashboard</a>
+    <a href="#patients" class="nav-patients">Patients</a>
+    <a href="#doctors" class="nav-doctors">Doctors</a>
+    <a href="#appointments" class="nav-appointments">Appointments</a>
+    <a href="#billing" class="nav-billing">Billing</a>
+  </nav>
+  <p class="side-note">Front desk: 8:00 am – 8:00 pm<br>Emergency: 24 hours</p>
+</aside>
+
+<main>
+
+<!-- DASHBOARD -->
+<section class="page" id="dashboard">
+  <header class="page-head"><h2>Today at Carewell</h2><p>Thursday overview</p></header>
+  <div class="stats">
+    <div class="stat"><b>128</b><span>Patients admitted</span></div>
+    <div class="stat"><b>24</b><span>Doctors on duty</span></div>
+    <div class="stat"><b>37</b><span>Appointments today</span></div>
+    <div class="stat alert"><b>6</b><span>Beds free in ICU</span></div>
+  </div>
+  <h3>Next appointments</h3>
+  <table>
+    <tr><th>Time</th><th>Patient</th><th>Doctor</th><th>Status</th></tr>
+    <tr><td>09:00</td><td>Aarav Mehta</td><td>Dr. Kapoor</td><td><i class="tag done">Completed</i></td></tr>
+    <tr><td>09:30</td><td>Sneha Rao</td><td>Dr. Iyer</td><td><i class="tag wait">Waiting</i></td></tr>
+    <tr><td>10:15</td><td>Imran Sheikh</td><td>Dr. Nair</td><td><i class="tag wait">Waiting</i></td></tr>
+    <tr><td>11:00</td><td>Priya Singh</td><td>Dr. Kapoor</td><td><i class="tag new">Scheduled</i></td></tr>
+  </table>
+</section>
+
+<!-- PATIENTS -->
+<section class="page" id="patients">
+  <header class="page-head"><h2>Patients</h2><p>Register and review patient records</p></header>
+  <form class="card">
+    <h3>Register new patient</h3>
+    <div class="grid">
+      <label>Full name<input type="text" placeholder="e.g. Rohan Verma"></label>
+      <label>Age<input type="number" min="0" placeholder="34"></label>
+      <label>Gender
+        <select><option>Female</option><option>Male</option><option>Other</option></select>
+      </label>
+      <label>Phone<input type="tel" placeholder="98XXXXXXXX"></label>
+      <label>Blood group
+        <select><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>O+</option><option>O-</option><option>AB+</option><option>AB-</option></select>
+      </label>
+      <label>Department
+        <select><option>General Medicine</option><option>Cardiology</option><option>Orthopedics</option><option>Pediatrics</option></select>
+      </label>
+    </div>
+    <label>Address<textarea rows="2" placeholder="Street, city"></textarea></label>
+    <button type="submit">Save patient</button>
+  </form>
+  <table>
+    <tr><th>ID</th><th>Name</th><th>Age</th><th>Blood</th><th>Department</th><th>Status</th></tr>
+    <tr><td>P-1001</td><td>Aarav Mehta</td><td>42</td><td>O+</td><td>Cardiology</td><td><i class="tag done">Discharged</i></td></tr>
+    <tr><td>P-1002</td><td>Sneha Rao</td><td>29</td><td>A+</td><td>General Medicine</td><td><i class="tag wait">Outpatient</i></td></tr>
+    <tr><td>P-1003</td><td>Imran Sheikh</td><td>57</td><td>B-</td><td>Orthopedics</td><td><i class="tag alert">Admitted</i></td></tr>
+    <tr><td>P-1004</td><td>Priya Singh</td><td>8</td><td>AB+</td><td>Pediatrics</td><td><i class="tag new">New</i></td></tr>
+  </table>
+</section>
+
+<!-- DOCTORS -->
+<section class="page" id="doctors">
+  <header class="page-head"><h2>Doctors</h2><p>Who is available and when</p></header>
+  <div class="doctors">
+    <article class="doc"><div class="avatar">RK</div><h3>Dr. Rajesh Kapoor</h3><p>Cardiology</p><small>Mon – Fri, 9 am – 3 pm</small><i class="tag done">On duty</i></article>
+    <article class="doc"><div class="avatar">MI</div><h3>Dr. Meera Iyer</h3><p>General Medicine</p><small>Mon – Sat, 10 am – 4 pm</small><i class="tag done">On duty</i></article>
+    <article class="doc"><div class="avatar">AN</div><h3>Dr. Arjun Nair</h3><p>Orthopedics</p><small>Tue – Sat, 11 am – 5 pm</small><i class="tag wait">In surgery</i></article>
+    <article class="doc"><div class="avatar">FA</div><h3>Dr. Fatima Ansari</h3><p>Pediatrics</p><small>Mon – Fri, 8 am – 2 pm</small><i class="tag new">Off today</i></article>
+  </div>
+</section>
+
+<!-- APPOINTMENTS -->
+<section class="page" id="appointments">
+  <header class="page-head"><h2>Appointments</h2><p>Book a visit</p></header>
+  <form class="card">
+    <h3>Book appointment</h3>
+    <div class="grid">
+      <label>Patient ID<input type="text" placeholder="P-1002"></label>
+      <label>Doctor
+        <select><option>Dr. Kapoor – Cardiology</option><option>Dr. Iyer – General Medicine</option><option>Dr. Nair – Orthopedics</option><option>Dr. Ansari – Pediatrics</option></select>
+      </label>
+      <label>Date<input type="date"></label>
+      <label>Time<input type="time"></label>
+    </div>
+    <label>Reason for visit<textarea rows="2" placeholder="Short description of symptoms"></textarea></label>
+    <button type="submit">Book appointment</button>
+  </form>
+  <table>
+    <tr><th>Date</th><th>Time</th><th>Patient</th><th>Doctor</th><th>Reason</th></tr>
+    <tr><td>08 Oct</td><td>11:00</td><td>Priya Singh</td><td>Dr. Kapoor</td><td>Routine check-up</td></tr>
+    <tr><td>09 Oct</td><td>10:30</td><td>Sneha Rao</td><td>Dr. Iyer</td><td>Follow-up, fever</td></tr>
+    <tr><td>10 Oct</td><td>12:00</td><td>Imran Sheikh</td><td>Dr. Nair</td><td>Knee X-ray review</td></tr>
+  </table>
+</section>
+
+<!-- BILLING -->
+<section class="page" id="billing">
+  <header class="page-head"><h2>Billing</h2><p>Invoices and payments</p></header>
+  <table>
+    <tr><th>Invoice</th><th>Patient</th><th>Service</th><th>Amount</th><th>Payment</th></tr>
+    <tr><td>INV-301</td><td>Aarav Mehta</td><td>Cardiac consultation</td><td>₹ 1,500</td><td><i class="tag done">Paid</i></td></tr>
+    <tr><td>INV-302</td><td>Imran Sheikh</td><td>X-ray and ward stay</td><td>₹ 18,200</td><td><i class="tag alert">Due</i></td></tr>
+    <tr><td>INV-303</td><td>Sneha Rao</td><td>Blood tests</td><td>₹ 2,350</td><td><i class="tag wait">Pending</i></td></tr>
+  </table>
+  <p class="total">Outstanding balance: <b>₹ 20,550</b></p>
+</section>
+
+</main>
+</body>
+</html>
